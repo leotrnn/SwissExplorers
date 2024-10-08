@@ -3,6 +3,8 @@
 error_reporting(E_ALL); // Rapport de toutes les erreurs
 ini_set('display_errors', 1); // Afficher les erreurs à l'écran
 
+include("header.php");
+
 ?>
 
 <!DOCTYPE html>
@@ -20,10 +22,7 @@ ini_set('display_errors', 1); // Afficher les erreurs à l'écran
 
 
 <body>
-    <div class="header">
-        <a href="addLieu.php">Ajouter un marker</a>
-        <h1>Swiss Explorers</h1>
-    </div>
+   
 
     <div id="map"></div>
 

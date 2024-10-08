@@ -85,7 +85,7 @@ h1 {
 
 .main {
     position: relative;    /* Position relative pour le positionnement absolu */
-    height: 100vh;        /* Prend toute la hauteur de la fenêtre */
+    height: 90vh;        /* Prend toute la hauteur de la fenêtre */
     margin: 0;            /* Supprime les marges par défaut */
     background-color: var(--backColor); /* Fond de la page, si nécessaire */
 }

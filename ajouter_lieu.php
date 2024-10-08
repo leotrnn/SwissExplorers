@@ -16,25 +16,49 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Récupérer les données du formulaire
     $nom = $_POST['nom'];
     $description = $_POST['description'];
-    $latitude = $_POST['latitude'];
-    $longitude = $_POST['longitude'];
+    $adresse = $_POST['adresse'];
 
-    // Préparer l'insertion du lieu
-    $stmt = $pdo->prepare("INSERT INTO lieux_visites (nom, description, latitude, longitude) VALUES (:nom, :description, :latitude, :longitude)");
-    $stmt->execute(['nom' => $nom, 'description' => $description, 'latitude' => $latitude, 'longitude' => $longitude]);
+    // URL de l'API Nominatim pour la recherche d'adresse
+    $adresseEncodee = urlencode($adresse);
+    $url = "https://nominatim.openstreetmap.org/search?format=json&q={$adresseEncodee}";
 
-    // Récupérer l'ID du lieu inséré
-    $lieuId = $pdo->lastInsertId();
+    // Configuration du contexte avec un User-Agent personnalisé
+    $opts = [
+        "http" => [
+            "method" => "GET",
+            "header" => "User-Agent: SwissExplorers/1.0\r\n"
+        ]
+    ];
+    $context = stream_context_create($opts);
 
-    // Traitement des images
-    if (isset($_FILES['images'])) {
-        foreach ($_FILES['images']['tmp_name'] as $key => $tmpName) {
-            $fileData = file_get_contents($tmpName);
-            $stmt = $pdo->prepare("INSERT INTO images (idLieu, image) VALUES (:lieu_id, :image_blob)");
-            $stmt->execute(['lieu_id' => $lieuId, 'image_blob' => $fileData]);
+    // Effectuer la requête à l'API
+    $response = file_get_contents($url, false, $context);
+    $data = json_decode($response);
+
+    // Vérifier si une réponse est reçue
+    if (!empty($data) && isset($data[0])) {
+        $latitude = $data[0]->lat;
+        $longitude = $data[0]->lon;
+
+        // Préparer l'insertion du lieu avec les coordonnées récupérées
+        $stmt = $pdo->prepare("INSERT INTO lieux_visites (nom, description, latitude, longitude) VALUES (:nom, :description, :latitude, :longitude)");
+        $stmt->execute(['nom' => $nom, 'description' => $description, 'latitude' => $latitude, 'longitude' => $longitude]);
+
+        // Récupérer l'ID du lieu inséré
+        $lieuId = $pdo->lastInsertId();
+
+        // Traitement des images
+        if (isset($_FILES['images'])) {
+            foreach ($_FILES['images']['tmp_name'] as $key => $tmpName) {
+                $fileData = file_get_contents($tmpName);
+                $stmt = $pdo->prepare("INSERT INTO images (idLieu, image) VALUES (:lieu_id, :image_blob)");
+                $stmt->execute(['lieu_id' => $lieuId, 'image_blob' => $fileData]);
+            }
         }
-    }
 
-    echo "Lieu ajouté avec succès !";
+        echo "Lieu ajouté avec succès !";
+    } else {
+        echo "Erreur : Impossible de récupérer les coordonnées pour cette adresse.";
+    }
 }
 ?>
