@@ -79,6 +79,7 @@ h1 {
     margin-right: .5%;
 }
 .header a{
+    color: black;
     text-decoration: none;
 }
 
@@ -108,4 +109,44 @@ h1 {
 .center {
     text-align: center;
     width: 100%;
+}
+
+/* Styles de la carte */
+#map {
+    height: 90vh;
+    width: 70%;
+    float: left;
+}
+
+/* Styles de la section latérale */
+#sidebar {
+    width: 30%;
+    height: 90vh;
+    float: right;
+    padding: 10px;
+    box-sizing: border-box;
+    display: none;
+    /* Masqué par défaut */
+    background-color: #f9f9f9;
+    border-left: 1px solid #ddd;
+}
+
+#sidebar img {
+    width: 49%;
+    height: 30vh;
+    border: 1px solid #ccc;
+    /* Ajout d'une bordure pour le débogage */
+    margin-bottom: 10px;
+    object-fit: cover; /* Ajuste l'image pour remplir le conteneur sans déformer */
+}
+
+
+.titleSidebar {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+#imagesContainer{
+    display: flex;
+    flex-wrap: wrap;
 }

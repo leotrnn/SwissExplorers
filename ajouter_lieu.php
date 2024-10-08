@@ -50,13 +50,40 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         // Traitement des images
         if (isset($_FILES['images'])) {
             foreach ($_FILES['images']['tmp_name'] as $key => $tmpName) {
-                $fileData = file_get_contents($tmpName);
-                $stmt = $pdo->prepare("INSERT INTO images (idLieu, image) VALUES (:lieu_id, :image_blob)");
-                $stmt->execute(['lieu_id' => $lieuId, 'image_blob' => $fileData]);
+                $fileType = $_FILES['images']['type'][$key];
+                $image = null;
+
+                // Créer une image selon le type (JPEG ou PNG)
+                if ($fileType === 'image/jpeg' || $fileType === 'image/jpg') {
+                    $image = imagecreatefromjpeg($tmpName);
+                } elseif ($fileType === 'image/png') {
+                    $image = imagecreatefrompng($tmpName);
+                }
+
+                // Si l'image est créée avec succès, on la compresse
+                if ($image !== null) {
+                    // Chemin temporaire pour stocker l'image compressée
+                    $compressedPath = 'compressed_' . $key . '.jpg';
+
+                    // Sauvegarder l'image compressée (qualité à 75 pour une bonne compression)
+                    imagejpeg($image, $compressedPath, 75);
+                    imagedestroy($image);
+
+                    // Lire le contenu de l'image compressée
+                    $fileData = file_get_contents($compressedPath);
+
+                    // Insérer l'image compressée dans la base de données
+                    $stmt = $pdo->prepare("INSERT INTO images (idLieu, image) VALUES (:lieu_id, :image_blob)");
+                    $stmt->execute(['lieu_id' => $lieuId, 'image_blob' => $fileData]);
+
+                    // Supprimer l'image temporaire compressée
+                    unlink($compressedPath);
+                }
             }
         }
 
         echo "Lieu ajouté avec succès !";
+        header("Location: index.php");
     } else {
         echo "Erreur : Impossible de récupérer les coordonnées pour cette adresse.";
     }

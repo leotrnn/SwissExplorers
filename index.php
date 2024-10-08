@@ -1,9 +1,6 @@
 <?php
 
-error_reporting(E_ALL); // Rapport de toutes les erreurs
-ini_set('display_errors', 1); // Afficher les erreurs à l'écran
-
-include("header.php");
+include('header.php');
 
 ?>
 
@@ -17,14 +14,16 @@ include("header.php");
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
     <link rel="stylesheet" href="css/index.css">
+
 </head>
 
-
-
 <body>
-   
 
     <div id="map"></div>
+    <div id="sidebar">
+        <h2 class="titleSidebar">Détails du lieu</h2>
+        <div id="imagesContainer"></div>
+    </div>
 
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <script>
@@ -35,8 +34,6 @@ include("header.php");
             maxZoom: 18,
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
         }).addTo(map);
-
-
 
         // Récupération des données en JSON via PHP
         fetch('get_lieux.php')
@@ -50,18 +47,47 @@ include("header.php");
                         iconSize: [30, 30]
                     });
 
-                    // Construire le contenu de la popup
-                    let popupContent = `<strong class="titleMarker">${lieu.nom}</strong>`;
-                    if (lieu.image_url) {
-                        popupContent += `<br><img src="${lieu.image_url}" alt="${lieu.nom}" style="width: 100px; height: auto;">`;
-                    }
-
                     // Ajouter le marqueur à la carte
-                    L.marker([lieu.latitude, lieu.longitude], { icon: numberIcon })
-                        .addTo(map)
-                        .bindPopup(popupContent);
+                    var marker = L.marker([lieu.latitude, lieu.longitude], { icon: numberIcon })
+                        .addTo(map);
+
+                    // Événement au clic sur le marqueur
+                    marker.on('click', function () {
+                        afficherImages(lieu.idLieu, lieu.nom); // Assurez-vous que 'lieu.id' existe ici
+                    });
                 });
+
             });
+
+        function afficherImages(lieuId, lieuNom) {
+            fetch(`get_images.php?id=${lieuId}`)
+                .then(response => response.json())
+                .then(images => {
+                    console.log(images); // Vérifiez ce que vous récupérez
+
+                    const sidebar = document.getElementById('sidebar');
+                    const imagesContainer = document.getElementById('imagesContainer');
+
+                    // Mettre à jour le titre
+                    document.querySelector('.titleSidebar').textContent = `Images de ${lieuNom}`;
+
+                    // Vider le conteneur des images
+                    imagesContainer.innerHTML = '';
+
+                    // Ajouter les images récupérées
+                    images.forEach(image => {
+                        const imgElement = document.createElement('img');
+                        imgElement.src = image.image; // La source est déjà sous forme de chaîne base64 avec le bon type MIME
+                        imagesContainer.appendChild(imgElement);
+                    });
+
+                    // Afficher la section latérale
+                    sidebar.style.display = 'block';
+                });
+        }
+
+
+
     </script>
 
 </body>
