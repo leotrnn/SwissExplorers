@@ -8,6 +8,12 @@
     --mainFont: normal normal 600 1.3em/1.6em 'Outfit', sans-serif;
     --secondaryFont: normal normal 400 1em/1em 'Outfit', sans-serif;
     --thirdFont: normal normal 300 1em/1.55em 'Outfit', sans-serif;
+
+    --boxShadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px,
+    rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px,
+    rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
 body {
@@ -60,4 +66,42 @@ h1 {
 .titleMarker{
     font-size: 18px;
     color: var(--color);
+}
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: .5%;
+    margin-right: .5%;
+}
+.header a{
+    text-decoration: none;
+}
+
+
+.main {
+    position: relative;    /* Position relative pour le positionnement absolu */
+    height: 100vh;        /* Prend toute la hauteur de la fenêtre */
+    margin: 0;            /* Supprime les marges par défaut */
+    background-color: var(--backColor); /* Fond de la page, si nécessaire */
+}
+
+.card {
+    margin: 0;            /* Supprime la marge */
+    background-color: var(--backColor);
+    border-radius: 15px;
+    padding: 2rem;
+    display: inline-block;
+    box-shadow: var(--boxShadow);
+    position: absolute;    /* Position absolue */
+    top: 50%;              /* Se positionne à 50% du haut */
+    left: 50%;             /* Se positionne à 50% de la gauche */
+    transform: translate(-50%, -50%); /* Déplace l'élément de moitié de sa taille */
+    z-index: 1;
+    width: 30%;
+}
+
+.center {
+    text-align: center;
+    width: 100%;
 }
