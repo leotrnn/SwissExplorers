@@ -1,0 +1,63 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+
+:root{
+    --color : rgb(168, 168, 225);
+    --backColor: rgb(36, 36, 36);
+
+    --mainFont: normal normal 600 1.3em/1.6em 'Outfit', sans-serif;
+    --secondaryFont: normal normal 400 1em/1em 'Outfit', sans-serif;
+    --thirdFont: normal normal 300 1em/1.55em 'Outfit', sans-serif;
+}
+
+body {
+    font: var(--mainFont);
+    background-color: var(--backColor);
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 20px;
+    color: var(--color);
+}
+
+#map {
+    height: 1200px;
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.custom-marker {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 14px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.leaflet-popup-content-wrapper {
+    background: white;
+    border-radius: 8px;
+    box-shadow: none;
+    padding: 8px;
+    border: 1px solid #ccc;
+}
+
+.leaflet-popup-tip {
+    background: white;
+    border: 1px solid #ccc;
+}
+
+.titleMarker{
+    font-size: 18px;
+    color: var(--color);
+}
