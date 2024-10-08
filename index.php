@@ -17,6 +17,8 @@ ini_set('display_errors', 1); // Afficher les erreurs à l'écran
     <link rel="stylesheet" href="css/index.css">
 </head>
 
+
+
 <body>
     <div class="header">
         <a href="addLieu.php">Ajouter un marker</a>
@@ -30,11 +32,12 @@ ini_set('display_errors', 1); // Afficher les erreurs à l'écran
         // Initialisation de la carte
         var map = L.map('map').setView([46.2044, 6.1432], 13); // Centre sur Genève
 
-        // Ajout d'une couche de tuiles sombre (CartoDB Dark Matter)
-        L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
             maxZoom: 18,
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
         }).addTo(map);
+
+
 
         // Récupération des données en JSON via PHP
         fetch('get_lieux.php')
