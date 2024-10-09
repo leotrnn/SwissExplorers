@@ -85,14 +85,17 @@ include('header.php');
                     sidebar.style.display = 'block';
                     document.getElementById('map').style.width = '70%';
                 });
+
+
         }
 
         // Événement pour masquer la sidebar
         document.getElementById('closeSidebar').addEventListener('click', function () {
             document.getElementById('sidebar').style.display = 'none';
             document.getElementById('map').style.width = '100%';
-            map.invalidateSize(); // Redimensionne la carte
         });
+
+
 
 
 
