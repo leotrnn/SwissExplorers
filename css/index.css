@@ -113,30 +113,43 @@ h1 {
 
 /* Styles de la carte */
 #map {
-    height: 90vh;
-    width: 70%;
-    float: left;
+    height: 92vh;
+    width: 100%; /* Prend 100% de la largeur */
+    transition: width 0.3s ease; /* Animation lors du changement de largeur */
 }
 
 /* Styles de la section latérale */
 #sidebar {
     width: 30%;
-    height: 90vh;
+    height: 92vh;
     float: right;
     padding: 10px;
     box-sizing: border-box;
     display: none;
-    /* Masqué par défaut */
     background-color: #f9f9f9;
     border-left: 1px solid #ddd;
+    overflow-y: auto;
+    position: absolute;
+    right: 0;
+    top: 10;
+    z-index: 1000;
+    margin-top:3%;
 }
+
+#closeSidebar {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+
 
 #sidebar img {
     width: 49%;
     height: 30vh;
     border: 1px solid #ccc;
     /* Ajout d'une bordure pour le débogage */
-    margin-bottom: 10px;
     object-fit: cover; /* Ajuste l'image pour remplir le conteneur sans déformer */
 }
 
@@ -149,4 +162,14 @@ h1 {
 #imagesContainer{
     display: flex;
     flex-wrap: wrap;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
 }

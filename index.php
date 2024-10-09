@@ -21,9 +21,11 @@ include('header.php');
 
     <div id="map"></div>
     <div id="sidebar">
+        <button id="closeSidebar" class="close-btn">&times;</button>
         <h2 class="titleSidebar">Détails du lieu</h2>
         <div id="imagesContainer"></div>
     </div>
+
 
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <script>
@@ -63,13 +65,11 @@ include('header.php');
             fetch(`get_images.php?id=${lieuId}`)
                 .then(response => response.json())
                 .then(images => {
-                    console.log(images); // Vérifiez ce que vous récupérez
-
                     const sidebar = document.getElementById('sidebar');
                     const imagesContainer = document.getElementById('imagesContainer');
 
                     // Mettre à jour le titre
-                    document.querySelector('.titleSidebar').textContent = `Images de ${lieuNom}`;
+                    document.querySelector('.titleSidebar').textContent = `${lieuNom}`;
 
                     // Vider le conteneur des images
                     imagesContainer.innerHTML = '';
@@ -77,14 +77,24 @@ include('header.php');
                     // Ajouter les images récupérées
                     images.forEach(image => {
                         const imgElement = document.createElement('img');
-                        imgElement.src = image.image; // La source est déjà sous forme de chaîne base64 avec le bon type MIME
+                        imgElement.src = image.image;
                         imagesContainer.appendChild(imgElement);
                     });
 
                     // Afficher la section latérale
                     sidebar.style.display = 'block';
+                    document.getElementById('map').style.width = '70%';
                 });
         }
+
+        // Événement pour masquer la sidebar
+        document.getElementById('closeSidebar').addEventListener('click', function () {
+            document.getElementById('sidebar').style.display = 'none';
+            document.getElementById('map').style.width = '100%';
+            map.invalidateSize(); // Redimensionne la carte
+        });
+
+
 
 
 

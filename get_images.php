@@ -1,15 +1,7 @@
 <?php
 // Connexion à la base de données
-$dsn = 'mysql:host=localhost;dbname=swissExplorers;charset=utf8';
-$user = 'leo-trn';
-$pass = 'Super12345@';
+include('bdd/bdd.php');
 
-try {
-    $pdo = new PDO($dsn, $user, $pass);
-} catch (PDOException $e) {
-    echo 'Erreur : ' . $e->getMessage();
-    exit();
-}
 
 // Vérification de l'ID du lieu
 if (isset($_GET['id'])) {
