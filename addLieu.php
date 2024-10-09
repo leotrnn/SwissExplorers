@@ -4,18 +4,6 @@ include("header.php");
 
 
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SwissExplorers</title>
-    <link rel="stylesheet" href="css/index.css">
-</head>
-
-<body>
     <div class="main">
         <div class="center">
             <div class="card">
@@ -39,7 +27,7 @@ include("header.php");
                             <input type="file" id="images" name="images[]" accept="image/*" multiple required>
                         </div>
                         <div>
-                            <button type="submit">Ajouter le lieu</button>
+                            <button class="btnForm" type="submit">Ajouter le lieu</button>
                         </div>
                     </form>
 

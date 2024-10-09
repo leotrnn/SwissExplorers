@@ -1,28 +1,38 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
 
-:root{
+:root {
 
     color-scheme: light;
 
-    --color : rgb(218, 41, 28);
+    --color: rgb(218, 41, 28);
     --backColor: rgb(255, 255, 255);
 
     --mainFont: normal normal 600 1.3em/1.6em 'Outfit', sans-serif;
     --secondaryFont: normal normal 400 1em/1em 'Outfit', sans-serif;
     --thirdFont: normal normal 300 1em/1.55em 'Outfit', sans-serif;
 
-    --boxShadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
-    rgba(0, 0, 0, 0.12) 0px -12px 30px,
-    rgba(0, 0, 0, 0.12) 0px 4px 6px,
-    rgba(0, 0, 0, 0.17) 0px 12px 13px,
-    rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    --boxShadow: rgba(0, 0, 0, 0.25) 0px 10px 20px,
+        rgba(0, 0, 0, 0.12) 0px 6px 10px,
+        rgba(0, 0, 0, 0.1) 0px 2px 4px;
+
+
 }
 
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: .5%;
+    padding-right: .5%;
+    border-bottom: 1px solid #ddd;
+    
+}
 
 body {
+    margin: 0;
+
     font: var(--mainFont);
-    background-color: var(--backColor)  ;
+    background-color: var(--backColor);
     padding: 0;
 }
 
@@ -37,7 +47,8 @@ h1 {
     width: 100%;
     border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    background-color: var(--backColor) !important; /* Utilisation de !important pour forcer la couleur */
+    background-color: var(--backColor) !important;
+    /* Utilisation de !important pour forcer la couleur */
 }
 
 .custom-marker {
@@ -50,7 +61,7 @@ h1 {
     height: 40px;
     border-radius: 50%;
     font-size: 14px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    box-shadow: var(--boxShadow);
     text-align: center;
 }
 
@@ -67,44 +78,82 @@ h1 {
     border: 1px solid #ccc;
 }
 
-.titleMarker{
+.titleMarker {
     font-size: 18px;
     color: var(--color);
 }
-.header{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-left: .5%;
-    margin-right: .5%;
-}
-.header a{
+
+
+
+.header a {
     color: black;
     text-decoration: none;
 }
 
-
-.main {
-    position: relative;    /* Position relative pour le positionnement absolu */
-    height: 90vh;        /* Prend toute la hauteur de la fenêtre */
-    margin: 0;            /* Supprime les marges par défaut */
-    background-color: var(--backColor); /* Fond de la page, si nécessaire */
+.header a:hover{
+    opacity: .6;
 }
 
-.card {
-    margin: 0;            /* Supprime la marge */
+.main {
+    position: relative;
+    /* Position relative pour le positionnement absolu */
+    height: 90vh;
+    /* Prend toute la hauteur de la fenêtre */
+    margin: 0;
+    /* Supprime les marges par défaut */
     background-color: var(--backColor);
+    /* Fond de la page, si nécessaire */
+}
+
+/* Styles du formulaire */
+.card {
+    background-color: var(--backColor); /* Assurez-vous que le fond soit le même que celui de la page */
     border-radius: 15px;
     padding: 2rem;
     display: inline-block;
     box-shadow: var(--boxShadow);
-    position: absolute;    /* Position absolue */
-    top: 50%;              /* Se positionne à 50% du haut */
-    left: 50%;             /* Se positionne à 50% de la gauche */
-    transform: translate(-50%, -50%); /* Déplace l'élément de moitié de sa taille */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     z-index: 1;
     width: 30%;
 }
+
+/* Styles des champs de formulaire */
+input[type="text"],
+input[type="file"],
+.btnForm {
+    width: 100%; /* Prend toute la largeur */
+    padding: 10px; /* Ajoute de l'espace à l'intérieur */
+    margin-bottom: 20px; /* Espacement entre les champs */
+    border: 1px solid #ccc; /* Bordure grise pour les champs */
+    border-radius: 5px; /* Coins arrondis */
+    font-family: 'Outfit', sans-serif; /* Utilise la même police */
+    font-size: 1em; /* Taille de police uniforme */
+}
+
+/* Styles pour les boutons */
+.btnForm {
+    background-color: var(--color); /* Couleur de fond du bouton */
+    color: white; /* Couleur du texte */
+    border: none; /* Supprime la bordure */
+    cursor: pointer; /* Change le curseur au survol */
+    transition: background-color 0.3s ease; /* Animation lors du changement de couleur */
+}
+
+.btnForm:hover {
+    background-color: darken(var(--color), 10%); /* Change légèrement la couleur au survol */
+}
+
+/* Styles des labels */
+label {
+    font-size: 1em; /* Uniformise la taille de la police des labels */
+    margin-bottom: 5px; /* Ajoute de l'espace sous le label */
+    display: block; /* Affiche le label sur une nouvelle ligne */
+    color: var(--color); /* Couleur du texte */
+}
+
 
 .center {
     text-align: center;
@@ -114,8 +163,10 @@ h1 {
 /* Styles de la carte */
 #map {
     height: 92vh;
-    width: 100%; /* Prend 100% de la largeur */
-    transition: width 0.3s ease; /* Animation lors du changement de largeur */
+    width: 100%;
+    /* Prend 100% de la largeur */
+    transition: width 0.3s ease;
+    /* Animation lors du changement de largeur */
 }
 
 /* Styles de la section latérale */
@@ -131,9 +182,9 @@ h1 {
     overflow-y: auto;
     position: absolute;
     right: 0;
-    top: 10;
+    top: 15;
     z-index: 1000;
-    margin-top:3%;
+    margin-top: 3%;
 }
 
 #closeSidebar {
@@ -150,7 +201,8 @@ h1 {
     height: 30vh;
     border: 1px solid #ccc;
     /* Ajout d'une bordure pour le débogage */
-    object-fit: cover; /* Ajuste l'image pour remplir le conteneur sans déformer */
+    object-fit: cover;
+    /* Ajuste l'image pour remplir le conteneur sans déformer */
 }
 
 
@@ -159,7 +211,7 @@ h1 {
     margin-bottom: 10px;
 }
 
-#imagesContainer{
+#imagesContainer {
     display: flex;
     flex-wrap: wrap;
 }
@@ -173,3 +225,10 @@ h1 {
     right: 10px;
     cursor: pointer;
 }
+
+.divHeader{
+    width: 15%;
+    display: flex;
+    justify-content: space-around;
+}
+
