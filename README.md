@@ -53,15 +53,16 @@
 
 <h3>3. Rendez-vous dans le répertoire des projets web locaux</h3>
 
-      ```bash
-            # Si le sous-système utilisé est WSL :
-            cd /var/www/html
+      ```
+      # Si le sous-système utilisé est WSL :
+      cd /var/www/html
       ```
 
 <h3>2. Clonez le dépôt</h3>
       
-      ```bash
+      ```
       git clone https://github.com/username/swissexplorers.git
+      ```
 
 <h3>4. Importez la base de données dans un éditeur SQL</h3>
    <strong><h4>[ATTENTION]</h4></strong> Les images sont stockées sous format BLOB, cela veut dire que le contenu du script SQL est volumineux et contient des caractères spéciaux, nous vous recommandons d'importer le fichier dans sa globalité plutôt que de copier-coller son contenu.
