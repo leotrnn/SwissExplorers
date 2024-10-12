@@ -62,7 +62,7 @@
       git clone https://github.com/username/swissexplorers.git
 
 <h3>4. Importez la base de données dans un éditeur SQL</h3>
-   [ATTENTION] Les images sont stockées sous format BLOB, cela veut dire que le contenu du script SQL est volumineux et contient des caractères spéciaux, nous vous recommandons d'importer le fichier dans sa globalité plutôt que de copier-coller son contenu.
+   <strong>[ATTENTION]</strong> Les images sont stockées sous format BLOB, cela veut dire que le contenu du script SQL est volumineux et contient des caractères spéciaux, nous vous recommandons d'importer le fichier dans sa globalité plutôt que de copier-coller son contenu.
 
 <h3>6. Renommez "configSample.php" en config.php, est ajoutez vos informations de connexion à la base de données</h3>
 
