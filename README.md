@@ -1,10 +1,3 @@
-
-<style>
-  p {
-    text-align: justify;
-  }
-</style>
-
 <h1 align="center">SwissExplorers</h1>
 
 <p align="center"><em>SwissExplorers</em> est un projet visant à explorer et documenter les paysages et lieux autour de Genève en Suisse. Nous plaçons aléatoirement des points sur une carte et partons les découvrir, capturant des photos et des moments uniques en chemin.</p>
@@ -58,3 +51,10 @@ Pour exécuter ce projet en local :
 4. Importez la base de données dans un éditeur SQL
 5. Renommez "configSample.php" en config.php, est ajoutez vos informations de connexion à la base de données
 6. Ouvrez votre navigateur web et allez sur localhost
+
+
+<style>
+  p {
+    text-align: justify;
+  }
+</style>
