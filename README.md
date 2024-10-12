@@ -1,3 +1,8 @@
+<style>
+  p {
+    text-align: justify;
+  }
+</style>
 <h1 align="center">SwissExplorers</h1>
 
 <p align="center"><em>SwissExplorers</em> est un projet visant à explorer et documenter les paysages et lieux autour de Genève en Suisse. Nous plaçons aléatoirement des points sur une carte et partons les découvrir, capturant des photos et des moments uniques en chemin.</p>
