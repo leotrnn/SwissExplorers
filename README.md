@@ -45,17 +45,25 @@
 <h2 align="center">Installation et utilisation</h2>
 
 <h3>1. Démarrez vos services apache2 et mysql</h3>
-   ```bash
-   sudo service apache2 start
-   sudo service apache2 start
+
+      ```bash
+      sudo service apache2 start
+      sudo service apache2 start
+
 <h3>3. Rendez-vous dans le répertoire des projets web locaux</h3>
-   ```bash
-   # Si le sous-système utilisé est WSL :
-   cd /var/www/html
+
+      ```bash
+      # Si le sous-système utilisé est WSL :
+      cd /var/www/html
+
 <h3>2. Clonez le dépôt</h3>
-   ```bash
-   git clone https://github.com/username/swissexplorers.git
+      
+      ```bash
+      git clone https://github.com/username/swissexplorers.git
+
 <h3>4. Importez la base de données dans un éditeur SQL</h3>
    [ATTENTION] Les images sont stockées sous format BLOB, cela veut dire que le contenu du script SQL est volumineux et contient des caractères spéciaux, nous vous recommandons d'importer le fichier dans sa globalité plutôt que de copier-coller son contenu.
+
 <h3>6. Renommez "configSample.php" en config.php, est ajoutez vos informations de connexion à la base de données</h3>
+
 <h3>7. Ouvrez votre navigateur web et allez sur localhost</h3>
