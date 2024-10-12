@@ -62,7 +62,7 @@ cd /var/www/html
 <h3>2. Clonez le dépôt</h3>
       
 ```bash
-git clone https://github.com/username/swissexplorers.git
+git clone https://github.com/leotrnn/swissexplorers.git
 ```
 
 <h3>4. Importez la base de données dans un éditeur SQL</h3>
