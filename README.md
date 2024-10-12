@@ -49,7 +49,7 @@
 
 ```bash
 sudo service apache2 start
-sudo service apache2 start
+sudo service mysql start
 ```
 
 <h3>3. Rendez-vous dans le répertoire des projets web locaux</h3>
