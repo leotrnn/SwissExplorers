@@ -12,7 +12,7 @@
 
 <h2 align="center">Aperçu du projet</h2>
 
-<p align="justify">L'objectif de <bold>SwissExplorers</bold> est de découvrir des endroits inattendus autour de Genève et de capturer ces moments en photo. Les points sont placés de manière aléatoire sur la carte, et notre mission est de les visiter et d'en rapporter des images. Ce site est une trace de toutes nos découvertes, accessible à tous ceux qui souhaitent explorer virtuellement avec nous.</p>
+<p align="justify">L'objectif de <strong>SwissExplorers</strong> est de découvrir des endroits inattendus autour de Genève et de capturer ces moments en photo. Les points sont placés de manière aléatoire sur la carte, et notre mission est de les visiter et d'en rapporter des images. Ce site est une trace de toutes nos découvertes, accessible à tous ceux qui souhaitent explorer virtuellement avec nous.</p>
 
 <h2 align="center">Fonctionnalités</h2>
 
