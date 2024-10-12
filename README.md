@@ -22,6 +22,11 @@ L'objectif de *SwissExplorers* est de découvrir des endroits inattendus autour 
 - **Historique des découvertes** : Retrouvez l'ensemble de nos visites passées et suivez nos nouvelles explorations en temps réel.
 
 <h2 align="center">Pages</h2>
+<h3 align="center">Accueil</h3>
+La page d'accueil de SwissExplorers présente une carte interactive affichant tous les points que nous avons explorés autour de Genève. Chaque point correspond à un endroit que nous avons visité et documenté en photos. En cliquant sur un point, une galerie d’images s’affiche, permettant de découvrir les lieux à travers notre regard. L’interface moderne et épurée rend la navigation facile et agréable.
+
+<h3 align="center">À propos</h3>
+La page À propos offre un aperçu du projet SwissExplorers, expliquant notre démarche et notre objectif de découverte. Elle met en avant une grande image en arrière-plan, représentant les paysages que nous explorons, avec un arc de cercle en avant-plan contenant des informations sur notre aventure et notre motivation.
 
 <h2 align="center">Technologies utilisées</h2>
 
@@ -30,8 +35,6 @@ L'objectif de *SwissExplorers* est de découvrir des endroits inattendus autour 
 - **Base de données** : MySQL pour stocker les informations sur les points et les photos.
 
 <h2 align="center">Installation et utilisation</h2>
-<h3 align="center">Installation et utilisation</h3>
-<h3 align="center">Installation et utilisation</h3>
 
 Pour exécuter ce projet en local :
 1. Démarrez vos services apache2 et mysql
