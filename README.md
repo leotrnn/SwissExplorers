@@ -57,5 +57,6 @@ Pour exécuter ce projet en local :
    ```bash
    git clone https://github.com/username/swissexplorers.git
 4. Importez la base de données dans un éditeur SQL
-5. Renommez "configSample.php" en config.php, est ajoutez vos informations de connexion à la base de données
-6. Ouvrez votre navigateur web et allez sur localhost
+   [ATTENTION] Les images sont stockées sous format BLOB, cela veut dire que le contenu du script SQL est volumineux et contient des caractères spéciaux, nous vous recommandons d'importer le fichier dans sa globalité plutôt que de copier-coller son contenu.
+6. Renommez "configSample.php" en config.php, est ajoutez vos informations de connexion à la base de données
+7. Ouvrez votre navigateur web et allez sur localhost
