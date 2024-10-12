@@ -31,7 +31,9 @@
 
 
 <h3 align="center">À propos</h3>
+
 ![image](https://github.com/user-attachments/assets/abf60c5e-71de-44d0-9bfc-1a72020b98a5)
+
 <p align="justify">La page À propos offre un aperçu du projet SwissExplorers, expliquant notre démarche et notre objectif de découverte. Elle met en avant une grande image en arrière-plan, représentant les paysages que nous explorons, avec un arc de cercle en avant-plan contenant des informations sur notre aventure et notre motivation.</p>
 
 <h2 align="center">Technologies utilisées</h2>
