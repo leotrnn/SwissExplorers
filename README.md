@@ -36,10 +36,13 @@ Pour exécuter ce projet en local :
    ```bash
    sudo service apache2 start
    sudo service apache2 start
+3. Rendez-vous dans le répertoire des projets web locaux
+   ```bash
+   # Si le sous-système utilisé est WSL :
+   cd /var/www/html
 2. Clonez le dépôt :
    ```bash
    git clone https://github.com/username/swissexplorers.git
-3. Glissez le dossier du projet dans votre répertoire de projets locaux
 4. Importez la base de données dans un éditeur SQL
 5. Renommez "configSample.php" en config.php, est ajoutez vos informations de connexion à la base de données
 6. Ouvrez votre navigateur web et allez sur localhost
