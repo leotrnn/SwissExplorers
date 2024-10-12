@@ -76,7 +76,7 @@ git clone https://github.com/leotrnn/swissexplorers.git
 <h3>Impossible de cloner le projet car le dossier /var/www est protégé</h3>
       
 ```bash
-// Donner l'accès d'écriture au dossier www
+# Donner l'accès d'écriture au dossier www
 sudo chown -R www-data:www-data /var/www
 sudo chmod -R g+rwX /var/www
 sudo chmod 0777 /var/www
