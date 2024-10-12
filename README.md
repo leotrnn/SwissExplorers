@@ -9,6 +9,7 @@
 3. [Pages](#pages)
 4. [Technologies utilisées](#technologies-utilisées)
 5. [Installation et utilisation](#installation-et-utilisation)
+6. [Potentiels bugs](#potentiels-bugs)
 
 <h2 align="center">Aperçu du projet</h2>
 
@@ -67,3 +68,15 @@
 <h3>6. Renommez "configSample.php" en config.php, est ajoutez vos informations de connexion à la base de données</h3>
 
 <h3>7. Ouvrez votre navigateur web et allez sur localhost</h3>
+
+<h2 align="center">Potentiels bugs</h2>
+<h3>Impossible de cloner le projet car le dossier /var/www est protégé</h3>
+      
+      ```bash
+      // Donner l'accès d'écriture au dossier www
+      sudo chown -R www-data:www-data /var/www
+      sudo chmod -R g+rwX /var/www
+      sudo chmod 0777 /var/www
+      sudo chown -R [VOTRE USER] var/www
+
+
