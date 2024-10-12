@@ -33,6 +33,9 @@ L'objectif de *SwissExplorers* est de découvrir des endroits inattendus autour 
 
 Pour exécuter ce projet en local :
 1. Démarrez vos services apache2 et mysql
+   ```bash
+   sudo service apache2 start
+   sudo service apache2 start
 2. Clonez le dépôt :
    ```bash
    git clone https://github.com/username/swissexplorers.git
