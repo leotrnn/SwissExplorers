@@ -53,7 +53,7 @@
 
 <h3>3. Rendez-vous dans le répertoire des projets web locaux</h3>
 
-      ```bash
+      ```
       # Si le sous-système utilisé est WSL :
       cd /var/www/html
 
