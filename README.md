@@ -24,7 +24,9 @@
 <h2 align="center">Pages</h2>
 <h3 align="center">Accueil</h3>
 <p align="justify">La page d'accueil de SwissExplorers présente une carte interactive affichant tous les points que nous avons explorés autour de Genève. Chaque point correspond à un endroit que nous avons visité et documenté en photos. En cliquant sur un point, une galerie d’images s’affiche, permettant de découvrir les lieux à travers notre regard. L’interface moderne et épurée rend la navigation facile et agréable.</p>
+
 ![image](https://github.com/user-attachments/assets/fa017289-1ac8-4722-8f38-79a9a7db68ef)
+
 ![image](https://github.com/user-attachments/assets/af786df3-1f3c-4d06-ae4b-c03f0622b2cf)
 
 
