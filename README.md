@@ -12,7 +12,7 @@
 
 <h2 align="center">Aperçu du projet</h2>
 
-L'objectif de *SwissExplorers* est de découvrir des endroits inattendus autour de Genève et de capturer ces moments en photo. Les points sont placés de manière aléatoire sur la carte, et notre mission est de les visiter et d'en rapporter des images. Ce site est une trace de toutes nos découvertes, accessible à tous ceux qui souhaitent explorer virtuellement avec nous.
+<p align="justify">L'objectif de *SwissExplorers* est de découvrir des endroits inattendus autour de Genève et de capturer ces moments en photo. Les points sont placés de manière aléatoire sur la carte, et notre mission est de les visiter et d'en rapporter des images. Ce site est une trace de toutes nos découvertes, accessible à tous ceux qui souhaitent explorer virtuellement avec nous.</p>
 
 <h2 align="center">Fonctionnalités</h2>
 
@@ -23,10 +23,10 @@ L'objectif de *SwissExplorers* est de découvrir des endroits inattendus autour 
 
 <h2 align="center">Pages</h2>
 <h3 align="center">Accueil</h3>
-La page d'accueil de SwissExplorers présente une carte interactive affichant tous les points que nous avons explorés autour de Genève. Chaque point correspond à un endroit que nous avons visité et documenté en photos. En cliquant sur un point, une galerie d’images s’affiche, permettant de découvrir les lieux à travers notre regard. L’interface moderne et épurée rend la navigation facile et agréable.
+<p align="justify">La page d'accueil de SwissExplorers présente une carte interactive affichant tous les points que nous avons explorés autour de Genève. Chaque point correspond à un endroit que nous avons visité et documenté en photos. En cliquant sur un point, une galerie d’images s’affiche, permettant de découvrir les lieux à travers notre regard. L’interface moderne et épurée rend la navigation facile et agréable.</p>
 
 <h3 align="center">À propos</h3>
-La page À propos offre un aperçu du projet SwissExplorers, expliquant notre démarche et notre objectif de découverte. Elle met en avant une grande image en arrière-plan, représentant les paysages que nous explorons, avec un arc de cercle en avant-plan contenant des informations sur notre aventure et notre motivation.
+<p align="justify">La page À propos offre un aperçu du projet SwissExplorers, expliquant notre démarche et notre objectif de découverte. Elle met en avant une grande image en arrière-plan, représentant les paysages que nous explorons, avec un arc de cercle en avant-plan contenant des informations sur notre aventure et notre motivation.</p>
 
 <h2 align="center">Technologies utilisées</h2>
 
