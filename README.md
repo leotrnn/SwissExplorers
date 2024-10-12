@@ -79,7 +79,7 @@ git clone https://github.com/username/swissexplorers.git
 // Donner l'accès d'écriture au dossier www
 sudo chown -R www-data:www-data /var/www
 sudo chmod -R g+rwX /var/www
- sudo chmod 0777 /var/www
- sudo chown -R [VOTRE USER] var/www
+sudo chmod 0777 /var/www
+sudo chown -R [VOTRE USER] var/www
 ```
 
