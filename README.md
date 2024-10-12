@@ -30,6 +30,8 @@ L'objectif de *SwissExplorers* est de découvrir des endroits inattendus autour 
 - **Base de données** : MySQL pour stocker les informations sur les points et les photos.
 
 <h2 align="center">Installation et utilisation</h2>
+<h3 align="center">Installation et utilisation</h3>
+<h3 align="center">Installation et utilisation</h3>
 
 Pour exécuter ce projet en local :
 1. Démarrez vos services apache2 et mysql
