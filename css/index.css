@@ -169,23 +169,6 @@ label {
     /* Animation lors du changement de largeur */
 }
 
-/* Styles de la section latérale */
-#sidebar {
-    width: 30%;
-    height: 92vh;
-    float: right;
-    padding: 10px;
-    box-sizing: border-box;
-    display: none;
-    background-color: #f9f9f9;
-    border-left: 1px solid #ddd;
-    overflow-y: auto;
-    position: absolute;
-    right: 0;
-    top: 15;
-    z-index: 1000;
-    margin-top: 3%;
-}
 
 #closeSidebar {
     position: absolute;
@@ -232,3 +215,50 @@ label {
     justify-content: space-around;
 }
 
+#sidebar {
+    width: 30%;
+    height: 92vh;
+    float: right;
+    padding: 10px;
+    box-sizing: border-box;
+    display: none;
+    background-color: #f9f9f9;
+    border-left: 1px solid #ddd;
+    overflow-y: auto;
+    position: absolute;
+    right: 0;
+    top: 15;
+    z-index: 1500; /* z-index élevé pour être au-dessus de la carte */
+    margin-top: 3%;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000; /* Plus élevé que la sidebar */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Couleur de fond semi-transparente */
+    justify-content: center;
+    align-items: center;
+}
+
+/* Image dans le modal */
+.modal-content {
+    max-width: 70%;
+    max-height: 70%;
+    margin: auto;
+    display: block;
+}
+
+/* Bouton pour fermer le modal */
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    cursor: pointer;
+}

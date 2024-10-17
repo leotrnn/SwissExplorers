@@ -3,6 +3,11 @@
 include('header.php');
 
 ?>
+<div id="imageModal" class="modal">
+    <span class="close-modal">&times;</span>
+    <img class="modal-content" id="modalImage">
+</div>
+
 <div id="map"></div>
 <div id="sidebar">
     <button id="closeSidebar" class="close-btn">&times;</button>
@@ -62,6 +67,11 @@ include('header.php');
                 images.forEach(image => {
                     const imgElement = document.createElement('img');
                     imgElement.src = image.image;
+                    imgElement.classList.add('clickable-image');
+                    imgElement.style.cursor = 'pointer'; // Changer le curseur pour indiquer que c'est cliquable
+                    imgElement.addEventListener('click', function () {
+                        ouvrirModal(image.image);
+                    });
                     imagesContainer.appendChild(imgElement);
                 });
 
@@ -69,9 +79,26 @@ include('header.php');
                 sidebar.style.display = 'block';
                 document.getElementById('map').style.width = '70%';
             });
-
-
     }
+
+    function ouvrirModal(imageSrc) {
+        const modal = document.getElementById('imageModal');
+        const modalImage = document.getElementById('modalImage');
+        modal.style.display = 'flex';
+        modalImage.src = imageSrc;
+    }
+
+    // Événement pour fermer le modal
+    document.querySelector('.close-modal').addEventListener('click', function () {
+        document.getElementById('imageModal').style.display = 'none';
+    });
+
+    // Événement pour masquer la sidebar
+    document.getElementById('closeSidebar').addEventListener('click', function () {
+        document.getElementById('sidebar').style.display = 'none';
+        document.getElementById('map').style.width = '100%';
+    });
+
 
     // Événement pour masquer la sidebar
     document.getElementById('closeSidebar').addEventListener('click', function () {
