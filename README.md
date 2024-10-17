@@ -1,3 +1,7 @@
+<p align="center">
+    <img src="https://github.com/user-attachments/assets/4dd77709-d097-4dfb-bae1-01326a467fa3" alt="logo" width="400">
+</p>
+
 <h1 align="center">SwissExplorers</h1>
 
 <p align="justify"><em>SwissExplorers</em> est un projet visant à explorer et documenter les paysages et lieux autour de Genève en Suisse. Nous plaçons aléatoirement des points sur une carte et partons les découvrir, capturant des photos et des moments uniques en chemin.</p>
@@ -62,7 +66,7 @@ cd /var/www/html
 <h3>2. Clonez le dépôt</h3>
       
 ```bash
-git clone https://github.com/username/swissexplorers.git
+git clone https://github.com/leotrnn/swissexplorers.git
 ```
 
 <h3>4. Importez la base de données dans un éditeur SQL</h3>
@@ -76,7 +80,7 @@ git clone https://github.com/username/swissexplorers.git
 <h3>Impossible de cloner le projet car le dossier /var/www est protégé</h3>
       
 ```bash
-// Donner l'accès d'écriture au dossier www
+# Donner l'accès d'écriture au dossier www
 sudo chown -R www-data:www-data /var/www
 sudo chmod -R g+rwX /var/www
 sudo chmod 0777 /var/www
