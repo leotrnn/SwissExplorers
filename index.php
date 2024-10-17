@@ -3,8 +3,8 @@
 include('header.php');
 
 ?>
-<div id="imageModal" class="modal">
-    <span class="close-modal">&times;</span>
+<div id="imageModal" class="modal close-modal">
+    <span class="close-modal cross-modal">&times;</span>
     <img class="modal-content" id="modalImage">
 </div>
 

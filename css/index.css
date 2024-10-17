@@ -254,7 +254,7 @@ label {
 }
 
 /* Bouton pour fermer le modal */
-.close-modal {
+.cross-modal {
     position: absolute;
     top: 15px;
     right: 35px;
